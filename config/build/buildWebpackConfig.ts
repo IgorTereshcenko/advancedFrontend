@@ -10,19 +10,19 @@ export function buildWebpackConfig(options: BuildOptions): webpack.Configuration
     const {paths,mode,isDev} = options;
 
     return {
-        mode,
-        entry: paths.entry,
-        output: {
+        mode, // конфигурация приложения при сборке - либо прод либо дев
+        entry: paths.entry, // путь до точки входа
+        output: { // до точки выхода
             filename: '[name].[contenthash].js',
             path: paths.build,
-            clean: true
+            clean: true // удаление ненужных файлов при сборке
         },
-        plugins:buildPlugins(options) ,
+        plugins:buildPlugins(options), // подключаем плагины
         module: {
-            rules: buildLoaders(options),
+            rules: buildLoaders(options), // подключаем лоадеры
         },
-            resolve: buildResolves(options),
-            devtool: isDev ? 'inline-source-map' : undefined,
-            devServer: isDev ? buildDevServer(options) : undefined
-        }
+        resolve: buildResolves(options), // подключаем резолв
+        devtool: isDev ? 'inline-source-map' : undefined,
+        devServer: isDev ? buildDevServer(options) : undefined //devserver
+    }
 }

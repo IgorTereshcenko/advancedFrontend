@@ -1,18 +1,29 @@
 {
     "compilerOptions": {
       "outDir": "./dist/",
-      "noImplicitAny": true,
-      "module": "ESNext",
-      "target": "es5",
-      "jsx": "react-jsx",
-      "baseUrl": ".",
+      "noImplicitAny": true, // все переменные и параметры функций должны явно иметь тип
+      "module": "ESNext", // на основе какого стандарта будет генерится код
+      "target": "es5", // версия JS в которую будет компилиться код
+      "jsx": "react-jsx", // для работы с реактом
+      "baseUrl": ".", // базовый URL-адрес для всех относительных путей в проекте
       "paths": {
-        "*":["./src/*"]
+        "*":["./src/*"] // псевдонимы путей к модулям
       },
-      "allowJs": true,
-      "moduleResolution": "node",
-      "esModuleInterop": true,
-      "allowSyntheticDefaultImports": true
+      "allowJs": true, // компилятор может обрабатывать файлы с расширением .js
+      "moduleResolution": "node", //  используется система модулей Node.js.
+      "esModuleInterop": true, // esModuleInterop позволяет работать с пакетами, которые используют
+      // common js как с обычными пакета с помощью import (require() module.export) = common js
+      // import Moment from 'moment';
+      // без флага esModuleInterop результат undefined
+      // console.log(Moment);
+      // c флагом результат [object Object]
+      // console.log(Moment);
+      "allowSyntheticDefaultImports": true // Если какая-либо библиотека не имеет default import,
+      // лоадеры вроде ts-loader или babel-loader автоматически создают их
+      // вместо такого импорта
+      // import * as React from 'react';
+      // можно писать такой
+      // import React from 'react';
     },
     "ts-node": {
         "compilerOptions": {
