@@ -6,6 +6,11 @@ export function buildLoaders({isDev}: BuildOptions): webpack.RuleSetRule[] {
     //loaders нужны чтобы научить webpack понимать другие файлы,
     //по умолчанию он распознаёт только JS и JSON
 
+    const svgLoader = {
+        test: /\.svg$/,
+        use: ['@svgr/webpack'],
+    }
+
     // Если не используется TS - нужен babel loader
     const typeScriptLoader = {
         test: /\.tsx?$/, // читает и ts и tsx файлы
@@ -31,6 +36,15 @@ export function buildLoaders({isDev}: BuildOptions): webpack.RuleSetRule[] {
             "sass-loader",
         ],
     }
+
+    const fileLoader =   {
+        test: /\.(png|jpe?g|gif)$/i,
+        use: [
+          {
+            loader: 'file-loader',
+          },
+        ],
+    }
       
-    return [typeScriptLoader,cssLoader];
+    return [fileLoader, svgLoader, typeScriptLoader, cssLoader];
 }

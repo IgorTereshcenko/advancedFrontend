@@ -6,8 +6,8 @@ import ThemeProvider from "./app/providers/themeProvider/ui/ThemeProvider";
 render(
 	<BrowserRouter>
 		<ThemeProvider>
-			<App/>,
+			<App/>
 		</ThemeProvider>	
 	</BrowserRouter>,
 	document.getElementById('root')
-)
+);
