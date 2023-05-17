@@ -2,6 +2,7 @@ import { FC, useState } from 'react'
 import { classNames } from 'shared/lib/classNames/classNames'
 import cls from './sideBar.module.scss'
 import { ThemeSwicher } from 'widgets/ThemeSwicher'
+import { LangSwicher } from 'widgets/LangSwicher';
 
 interface SideBarProps {
     className?: string;
@@ -21,6 +22,7 @@ export const SideBar: FC<SideBarProps> = ({ className }) => {
                 <button onClick={onToggle}>toggle</button>
                 <div className={classNames(cls.swichers)}>
                     <ThemeSwicher/>
+                    <LangSwicher/>
                 </div>
         </div>
     )
