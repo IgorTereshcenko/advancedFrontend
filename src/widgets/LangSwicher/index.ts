@@ -1,3 +1,3 @@
-import { LangSwicher } from "./ui/LangSwicher";
+import { LangSwicher } from './ui/LangSwicher'
 
-export {LangSwicher}
+export { LangSwicher }
