@@ -45,6 +45,8 @@ module.exports = {
         'no-shadow': 'off',
         'import/extensions': 'off',
         'import/no-extraneous-dependencies': 'off',
-        'no-underscore-dangle': 'off'
+        'no-underscore-dangle': 'off',
+        'padded-blocks': 'off',
+        'skipBlankLines': 'off'
     }
 }
