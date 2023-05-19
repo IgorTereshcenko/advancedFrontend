@@ -1,10 +1,12 @@
 import { AboutPage } from 'pages/AboutPage'
 import { MainPage } from 'pages/MainPage'
+import { NotFoundPage } from 'pages/NotFoundPage'
 import React from 'react'
 
 export enum RoutesPath {
     MAIN = '/',
-    ABOUT = '/about'
+    ABOUT = '/about',
+    NOTFOUND = '*'
 }
 
 interface Routes {
@@ -14,5 +16,6 @@ interface Routes {
 
 export const routes: Routes[] = [
     { path: RoutesPath.MAIN, element: <MainPage/> },
-    { path: RoutesPath.ABOUT, element: <AboutPage/> }
+    { path: RoutesPath.ABOUT, element: <AboutPage/> },
+    { path: RoutesPath.NOTFOUND, element: <NotFoundPage/> }
 ]
