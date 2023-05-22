@@ -7,6 +7,7 @@ import { SideBar } from 'widgets/SideBar'
 import { Suspense } from 'react'
 
 const App = () => {
+
     const { theme } = useTheme()
 
     return (
