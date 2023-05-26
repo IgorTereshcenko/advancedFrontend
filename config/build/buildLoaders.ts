@@ -1,6 +1,6 @@
 import type webpack from 'webpack'
-import MiniCssExtractPlugin from 'mini-css-extract-plugin'
 import { type BuildOptions } from './types/config'
+import { buildCssLoaders } from './loaders/buildCssLoaders'
 
 export function buildLoaders ({ isDev }: BuildOptions): webpack.RuleSetRule[] {
     // loaders нужны чтобы научить webpack понимать другие файлы,
@@ -30,24 +30,7 @@ export function buildLoaders ({ isDev }: BuildOptions): webpack.RuleSetRule[] {
         exclude: /node_modules/
     }
 
-    const cssLoader = {
-        test: /\.s[ac]ss$/i,
-        use: [
-            isDev ? 'style-loader' : MiniCssExtractPlugin.loader, // используется чтобы css стили билдились отдельными чанками от js кода
-            {
-                loader: 'css-loader',
-                options: {
-                    modules: { // подключаем CSS modules
-                        auto: (resPath: string) => resPath.includes('.module.'), // разделяем cssModules и обычный CSS/SCSS
-                        localIdentName: isDev
-                            ? '[path].[name]__[local]--[hash:base64:5]'
-                            : '[hash:base64:8]' // делаем читаемые имена в режиме разработки
-                    }
-                }
-            },
-            'sass-loader'
-        ]
-    }
+    const cssLoader = buildCssLoaders(isDev)
 
     const fileLoader = {
         test: /\.(png|jpe?g|gif)$/i,
