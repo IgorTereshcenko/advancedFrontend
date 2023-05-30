@@ -43,7 +43,8 @@ module.exports = {
     'import/no-extraneous-dependencies': 'off',
     'no-underscore-dangle': 'off',
     'padded-blocks': 'off',
-    'skipBlankLines': 'off'
+    'skipBlankLines': 'off',
+    '@typescript-eslint/consistent-type-assertions': 'off'
   },
-  include: ["./config/storybook/**.ts"]
+  
 };

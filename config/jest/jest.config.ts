@@ -1,9 +1,4 @@
-/*
- * For a detailed explanation regarding each configuration property and type check, visit:
- * https://jestjs.io/docs/configuration
- */
-
-import path from "path";
+import path from 'path'
 
 export default {
     // All imported modules in your tests should be mocked automatically
@@ -30,7 +25,7 @@ export default {
         'node'
     ],
     moduleDirectories: [
-        'node_modules','src'
+        'node_modules', 'src'
     ],
     modulePaths: ['<rootDir>scr'],
     testMatch: [
@@ -42,7 +37,7 @@ export default {
     moduleNameMapper: {
         '\\.(css|scss)$': 'identity-obj-proxy',
         '\\.svg': path.resolve(__dirname, 'jestEmptyComponent.tsx')
-      },
+    }
     // Indicates whether the coverage information should be collected while executing the test
     // collectCoverage: false,
 

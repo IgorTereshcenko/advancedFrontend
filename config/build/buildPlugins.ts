@@ -8,7 +8,7 @@ export function buildPlugins ({ paths, isDev }: BuildOptions): webpack.WebpackPl
 
     const plugins = [
         new HTMLWebpackPlugin({ // упрощает создание файлов HTML и может автоматически вставлять модули JavaScript в наш основной шаблон HTML
-        template: paths.html // передаем путь
+            template: paths.html // передаем путь
         }),
         new webpack.ProgressPlugin(), // сообщает о прогрессе компиляции сборки
         new MiniCssExtractPlugin({ // используется чтобы css стили билдились отдельными чанками от js кода
@@ -20,12 +20,12 @@ export function buildPlugins ({ paths, isDev }: BuildOptions): webpack.WebpackPl
         })
     ]
 
-    if(isDev) {
+    if (isDev) {
         plugins.push(new BundleAnalyzerPlugin({
             openAnalyzer: false
         })) // удобный анализ бандла)
     }
 
-    return plugins;
+    return plugins
 
 }
