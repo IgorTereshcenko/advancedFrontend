@@ -1,0 +1,17 @@
+name: Chromatic CI
+
+on: [push, pull_request]
+
+jobs:
+  chromatic:
+    name: Chromatic
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Chromatic
+        uses: chromaqa/action@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          projectToken: ${{ secrets.CHROMATIC_APP_CODE }}
+          command: ${{github.event_name == 'pull_request' && 'chromatic:ci' || 'chromatic'}}
