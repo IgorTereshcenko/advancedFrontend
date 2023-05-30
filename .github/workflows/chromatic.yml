@@ -23,4 +23,4 @@ jobs:
         # Chromatic GitHub Action options
         with:
           projectToken: ${{ secrets.CHROMATIC__PROJECT__TOKEN }}
-          command: ${{github.event_name == 'pull_request' && 'chromatic:ci' || 'chromatic'}}
+    
