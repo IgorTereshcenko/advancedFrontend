@@ -1,17 +1,26 @@
-name: Chromatic CI
+# .github/workflows/chromatic.yml
 
-on: [push, pull_request]
+# Workflow name
+name: 'Chromatic'
 
+# Event for the workflow
+on: push
+
+# List of jobs
 jobs:
-  chromatic:
-    name: Chromatic
+  chromatic-deployment:
+    # Operating System
     runs-on: ubuntu-latest
+    # Job steps
     steps:
-      - uses: actions/checkout@v2
-      - name: Chromatic
-        uses: chromaqa/action@v1
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - uses: actions/checkout@v1
+      - name: Install dependencies
+        # 👇 Install dependencies with the same package manager used in the project (replace it as needed), e.g. yarn, npm, pnpm
+        run: yarn
+        # 👇 Adds Chromatic as a step in the workflow
+      - name: Publish to Chromatic
+        uses: chromaui/action@v1
+        # Chromatic GitHub Action options
         with:
           projectToken: ${{ secrets.CHROMATIC__PROJECT__TOKEN }}
           command: ${{github.event_name == 'pull_request' && 'chromatic:ci' || 'chromatic'}}
