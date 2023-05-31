@@ -12,7 +12,7 @@ const config: StorybookConfig = {
         '@storybook/addon-essentials',
         '@storybook/addon-interactions'
     ],
-    webpackFinal: async (config: webpack.Configuration, { configType }) => {
+    webpackFinal: async (config: webpack.Configuration) => {
 
         const paths: BuildPaths = {
             build: '',
@@ -24,18 +24,20 @@ const config: StorybookConfig = {
         config.resolve?.modules?.push(paths.src)
         config.resolve?.extensions?.push('.ts', '.tsx')
 
-        config.module.rules = config.module?.rules?.map((rule: RuleSetRule) => {
-            if ((rule.test as string).includes('svg')) {
-                return { ...rule, exclude: /\.svg$/i }
-            }
+        if (config.module?.rules) {
+            config.module.rules = config.module?.rules?.map((rule: RuleSetRule | '...') => {
+                if (rule !== '...' && (rule.test as string).includes('svg')) {
+                    return { ...rule, exclude: /\.svg$/i }
+                }
 
-            return rule
-        })
+                return rule
+            })
 
-        config.module.rules.push({
-            test: /\.svg$/,
-            use: ['@svgr/webpack']
-        })
+            config.module.rules.push({
+                test: /\.svg$/,
+                use: ['@svgr/webpack']
+            })
+        }
 
         config.module?.rules?.push(buildCssLoaders(true))
 

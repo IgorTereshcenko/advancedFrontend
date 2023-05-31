@@ -1,7 +1,10 @@
 {
     "Тестовый перевод": "Test translation",
-    "Перевод": "Translate",
+    "Короткий язык": "Ru",
+    "Длинный язык": "Русский",
     "Страница не найдена": "NotFoundPage",
     "Возникла непредвиденная ошибка" : "An unexpected error has occurred",
-    "Обновить страницу": "Refresh Page"
+    "Обновить страницу": "Refresh Page",
+    "Главная": "Main",
+    "О сайте": "About"
 }

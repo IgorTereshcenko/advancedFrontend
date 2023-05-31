@@ -9,7 +9,7 @@ const meta: Meta<typeof AboutPage> = {
     argTypes: {
         backgroundColor: { control: 'color' }
     }
-} satisfies Meta<typeof AboutPage>
+} as Meta<typeof AboutPage>
 
 export default meta
 type Story = StoryObj<typeof AboutPage>

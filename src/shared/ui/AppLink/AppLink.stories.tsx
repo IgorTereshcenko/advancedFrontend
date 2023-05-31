@@ -3,7 +3,6 @@ import { ThemeDecorator } from 'shared/config/storybook/ThemeDecorator'
 import { Theme } from 'app/providers/themeProvider'
 import { AppLink } from './AppLink'
 
-// eslint-disable-next-line @typescript-eslint/consistent-type-assertions
 const meta: Meta<typeof AppLink> = {
     title: 'shared/Applink',
     component: AppLink,

@@ -6,9 +6,10 @@ import { Button } from 'shared/ui/Button/Button'
 
 interface LangSwicherProps {
     className?: string
+    short?: boolean
 }
 
-export const LangSwicher: FC<LangSwicherProps> = ({ className }) => {
+export const LangSwicher: FC<LangSwicherProps> = ({ className, short }) => {
     const { t, i18n } = useTranslation()
 
     const toggle = () => {
@@ -20,7 +21,7 @@ export const LangSwicher: FC<LangSwicherProps> = ({ className }) => {
             theme='clear'
             className={classNames(cls.LangSwicher, {}, [className])}
             onClick={toggle}>
-            {t('Перевод')}
+            {t(short ? 'Короткий язык' : 'Длинный язык')}
         </Button>
     )
 }
