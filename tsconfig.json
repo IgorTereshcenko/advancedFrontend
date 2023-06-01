@@ -36,7 +36,7 @@
         "./config/jest/jestEmptyComponent.tsx",
         "./webpack.config.ts",
         "./config/jest/**.ts",
-        /* "./config/storybook/**.ts", */
+        "./config/storybook/**.ts",
         "./src/**/*.ts",
         "./src/**/*.tsx",  
       ],

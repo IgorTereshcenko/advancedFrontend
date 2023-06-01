@@ -12,7 +12,7 @@ module.exports = {
     sourceType: 'module',
     project: ['./tsconfig.json']
   },
-  plugins: ['react', '@typescript-eslint'],
+  plugins: ['react', '@typescript-eslint', 'react-hooks'],
   settings: {
     react: {
       version: 'detect'
@@ -44,7 +44,9 @@ module.exports = {
     'no-underscore-dangle': 'off',
     'padded-blocks': 'off',
     'skipBlankLines': 'off',
-    '@typescript-eslint/consistent-type-assertions': 'off'
+    '@typescript-eslint/consistent-type-assertions': 'off',
+    "react-hooks/rules-of-hooks": "error",
+    "react-hooks/exhaustive-deps": "error"
   },
   
 };

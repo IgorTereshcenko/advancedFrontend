@@ -28,6 +28,13 @@ export const Clear: Story = {
     }
 }
 
+export const ClearInverted: Story = {
+    args: {
+        children: 'Text',
+        theme: 'clear_inverted'
+    }
+}
+
 export const Outline: Story = {
     args: {
         children: 'Text',
