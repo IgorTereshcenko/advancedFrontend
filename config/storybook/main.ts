@@ -26,7 +26,8 @@ const config: StorybookConfig = {
 
         if (config.module?.rules) {
             config.module.rules = config.module?.rules?.map((rule: RuleSetRule | '...') => {
-                if (rule !== '...' && (rule.test as string).includes('svg')) {
+                // eslint-disable-next-line @typescript-eslint/prefer-includes
+                if (rule !== '...' && /svg/.test(rule.test as string)) {
                     return { ...rule, exclude: /\.svg$/i }
                 }
 
