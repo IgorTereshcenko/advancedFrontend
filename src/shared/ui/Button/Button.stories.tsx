@@ -122,3 +122,11 @@ export const OutlineSizeXL: Story = {
         size: 'size_xl'
     }
 }
+
+export const Disabled: Story = {
+    args: {
+        children: '<',
+        theme: 'outline',
+        disabled: true
+    }
+}
