@@ -27,6 +27,7 @@ export default {
     setupFilesAfterEnv: ['<rootDir>config/jest/setupTest.ts'],
     moduleNameMapper: {
         '\\.(css|scss)$': 'identity-obj-proxy',
+        '^axios$': require.resolve('axios'),
         '\\.svg': path.resolve(__dirname, 'jestEmptyComponent.tsx')
     }
 
