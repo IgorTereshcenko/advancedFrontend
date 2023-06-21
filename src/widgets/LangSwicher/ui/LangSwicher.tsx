@@ -1,4 +1,4 @@
-import { type FC } from 'react'
+import { memo, type FC } from 'react'
 import { classNames } from 'shared/lib/classNames/classNames'
 import cls from './langSwicher.module.scss'
 import { useTranslation } from 'react-i18next'
@@ -9,7 +9,7 @@ interface LangSwicherProps {
     short?: boolean
 }
 
-export const LangSwicher: FC<LangSwicherProps> = ({ className, short }) => {
+export const LangSwicher: FC<LangSwicherProps> = memo(({ className, short }) => {
     const { t, i18n } = useTranslation()
 
     const toggle = () => {
@@ -24,4 +24,4 @@ export const LangSwicher: FC<LangSwicherProps> = ({ className, short }) => {
             {t(short ? 'Короткий язык' : 'Длинный язык')}
         </Button>
     )
-}
+})
