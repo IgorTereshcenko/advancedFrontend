@@ -4,7 +4,7 @@ import { type BuildOptions } from './types/config'
 import MiniCssExtractPlugin from 'mini-css-extract-plugin'
 import { BundleAnalyzerPlugin } from 'webpack-bundle-analyzer'
 
-export function buildPlugins ({ paths, isDev }: BuildOptions): webpack.WebpackPluginInstance[] {
+export function buildPlugins ({ paths, isDev, apiUrl }: BuildOptions): webpack.WebpackPluginInstance[] {
 
     const plugins = [
         new HTMLWebpackPlugin({ // упрощает создание файлов HTML и может автоматически вставлять модули JavaScript в наш основной шаблон HTML
@@ -16,7 +16,8 @@ export function buildPlugins ({ paths, isDev }: BuildOptions): webpack.WebpackPl
             chunkFilename: 'css/[name].[contenthash:8].css' // задаем шаблон чанков
         }),
         new webpack.DefinePlugin({
-            __IS_DEV__: JSON.stringify(isDev) // позволяет использовать переменные из конфига глобально во всем приложении
+            __IS_DEV__: JSON.stringify(isDev), // позволяет использовать переменные из конфига глобально во всем приложении
+            __API__: JSON.stringify(apiUrl)
         })
     ]
 

@@ -1,4 +1,5 @@
 import { type ReducersMapObject, type EnhancedStore, type AnyAction, type Reducer, type CombinedState } from '@reduxjs/toolkit'
+import { type AxiosInstance } from 'axios'
 import { type ProfileShema } from 'entities/Profile'
 import { type UserSchema } from 'entities/User'
 import { type LoginShema } from 'features/AuthByUsername'
@@ -21,4 +22,8 @@ export type StateShemaKeys = keyof StateShema
 
 export interface ReduxStoreWithManager extends EnhancedStore<StateShema> {
     reducerManager: ReducerManager
+}
+
+export interface thunkExtraAgr {
+    api: AxiosInstance
 }

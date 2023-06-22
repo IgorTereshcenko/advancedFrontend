@@ -3,6 +3,10 @@ module.exports = {
     browser: true,
     es2021: true
   },
+  globals: {
+    __IS_DEV__: true,
+    __API__: true
+  },
   extends: ['plugin:react/recommended', 'standard-with-typescript', 'plugin:storybook/recommended'],
   parserOptions: {
     ecmaFeatures: {
