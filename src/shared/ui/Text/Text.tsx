@@ -8,7 +8,7 @@ interface TextProps {
     className?: string
     title?: string
     text?: string
-    thema: TextThema
+    thema?: TextThema
 }
 
 export const Text: FC<TextProps> = memo(({ className, text, title, thema = 'primary' }) => {

@@ -1,4 +1,4 @@
-import { type ReducersMapObject, configureStore } from '@reduxjs/toolkit'
+import { type ReducersMapObject, configureStore, type CombinedState, type Reducer } from '@reduxjs/toolkit'
 import { type StateShema } from './StateShema'
 import { userReducer } from 'entities/User'
 import { createReducerManager } from './reduxManager'
@@ -16,7 +16,7 @@ export function createReduxStore (
 
     const store = configureStore({
         ...asyncReducers,
-        reducer: reducerManager.reduce,
+        reducer: reducerManager.reduce as Reducer<CombinedState<StateShema>>,
         devTools: __IS_DEV__,
         preloadedState: initialState,
         middleware: getDefaultMiddleware => getDefaultMiddleware({

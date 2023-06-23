@@ -50,10 +50,12 @@ module.exports = {
     'skipBlankLines': 'off',
     '@typescript-eslint/consistent-type-assertions': 'off',
     "react-hooks/rules-of-hooks": "error",
+    "@typescript-eslint/no-unnecessary-type-assertion": "off",
     "react-hooks/exhaustive-deps": "error",
     "no-param-reassign": "off",
     "react/prop-types": "off",
-    "react/display-name": "off"
+    "react/display-name": "off",
+    "@typescript-eslint/no-invalid-void-type": "off"
   },
   
 };
