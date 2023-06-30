@@ -2,7 +2,9 @@ import { memo, type ButtonHTMLAttributes, type FC } from 'react'
 import { classNames } from 'shared/lib/classNames/classNames'
 import cls from './button.module.scss'
 
-type ThemeButton = 'clear' | 'outline' | 'background' | 'background_inverted' | 'clear_inverted'
+type ThemeButton =
+'clear' | 'outline' | 'background' | 'background_inverted' | 'clear_inverted' | 'outline_red'
+
 type ButtonSize = 'size_m' | 'size_l' | 'size_xl'
 
 interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
