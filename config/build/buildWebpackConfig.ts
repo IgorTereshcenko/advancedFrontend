@@ -14,7 +14,8 @@ export function buildWebpackConfig (options: BuildOptions): webpack.Configuratio
         output: { // до точки выхода
             filename: '[name].[contenthash].js',
             path: paths.build,
-            clean: true // удаление ненужных файлов при сборке
+            clean: true, // удаление ненужных файлов при сборке
+            publicPath: '/'
         },
         plugins: buildPlugins(options), // подключаем плагины
         module: {

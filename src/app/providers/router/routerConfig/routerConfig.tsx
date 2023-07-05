@@ -1,26 +1,31 @@
 import { AboutPage } from 'pages/AboutPage'
+import { ArticleDetailsPage } from 'pages/ArticleDetailsPage'
+import { ArticlesPage } from 'pages/ArticlesPage'
 import { MainPage } from 'pages/MainPage'
 import { NotFoundPage } from 'pages/NotFoundPage'
 import { ProfilePage } from 'pages/ProfilePage'
 import React from 'react'
-import { type RoutesProps } from 'react-router-dom'
 
 export enum RoutesPath {
     MAIN = '/',
     ABOUT = '/about',
     PROFILE = '/profile',
+    ARTICLES = '/articles',
+    ARTICLE_DETAILS = '/articles/', // +id
     NOTFOUND = '*'
 }
 
-interface Routes extends RoutesProps {
+export interface myRoutes {
     path: string
     element: React.ReactNode
     authOnly?: boolean
 }
 
-export const routes: Routes[] = [
+export const routes: myRoutes[] = [
     { path: RoutesPath.MAIN, element: <MainPage/> },
     { path: RoutesPath.ABOUT, element: <AboutPage/> },
     { path: RoutesPath.PROFILE, authOnly: true, element: <ProfilePage/> },
+    { path: RoutesPath.ARTICLES, authOnly: true, element: <ArticlesPage/> },
+    { path: RoutesPath.ARTICLE_DETAILS + ':id', authOnly: true, element: <ArticleDetailsPage/> },
     { path: RoutesPath.NOTFOUND, element: <NotFoundPage/> }
 ]
