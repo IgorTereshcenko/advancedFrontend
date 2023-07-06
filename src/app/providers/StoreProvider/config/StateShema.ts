@@ -1,5 +1,6 @@
 import { type ReducersMapObject, type EnhancedStore, type AnyAction, type Reducer, type CombinedState } from '@reduxjs/toolkit'
 import { type AxiosInstance } from 'axios'
+import { type ArticleDetailsShema } from 'entities/Article'
 import { type ProfileShema } from 'entities/Profile'
 import { type UserSchema } from 'entities/User'
 import { type LoginShema } from 'features/AuthByUsername'
@@ -9,6 +10,7 @@ export interface StateShema {
     // Асинхронные редюсеры
     LoginForm?: LoginShema
     profile?: ProfileShema
+    articleDetailse?: ArticleDetailsShema
 }
 
 export interface ReducerManager {
