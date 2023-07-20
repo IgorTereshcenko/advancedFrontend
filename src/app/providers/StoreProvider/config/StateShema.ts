@@ -4,6 +4,7 @@ import { type ArticleDetailsShema } from 'entities/Article'
 import { type ProfileShema } from 'entities/Profile'
 import { type UserSchema } from 'entities/User'
 import { type LoginShema } from 'features/AuthByUsername'
+import { type ArticleDetailseCommentShema } from 'pages/ArticleDetailsPage'
 
 export interface StateShema {
     user: UserSchema
@@ -11,6 +12,7 @@ export interface StateShema {
     LoginForm?: LoginShema
     profile?: ProfileShema
     articleDetailse?: ArticleDetailsShema
+    articleDetailseComments?: ArticleDetailseCommentShema
 }
 
 export interface ReducerManager {
