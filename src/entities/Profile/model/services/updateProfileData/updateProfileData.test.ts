@@ -11,7 +11,8 @@ const data = {
     age: 123,
     country: Country.Armenia,
     city: 'dsad',
-    currency: Currency.EUR
+    currency: Currency.EUR,
+    id: '1'
 }
 
 const { callChunk, api } = testAsyncThunk(updateProfileData, {

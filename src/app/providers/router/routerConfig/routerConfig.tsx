@@ -9,7 +9,7 @@ import React from 'react'
 export enum RoutesPath {
     MAIN = '/',
     ABOUT = '/about',
-    PROFILE = '/profile',
+    PROFILE = '/profile/', // +id
     ARTICLES = '/articles',
     ARTICLE_DETAILS = '/articles/', // +id
     NOTFOUND = '*'
@@ -24,7 +24,7 @@ export interface myRoutes {
 export const routes: myRoutes[] = [
     { path: RoutesPath.MAIN, element: <MainPage/> },
     { path: RoutesPath.ABOUT, element: <AboutPage/> },
-    { path: RoutesPath.PROFILE, authOnly: true, element: <ProfilePage/> },
+    { path: RoutesPath.PROFILE + ':id', authOnly: true, element: <ProfilePage/> },
     { path: RoutesPath.ARTICLES, authOnly: true, element: <ArticlesPage/> },
     { path: RoutesPath.ARTICLE_DETAILS + ':id', authOnly: true, element: <ArticleDetailsPage/> },
     { path: RoutesPath.NOTFOUND, element: <NotFoundPage/> }

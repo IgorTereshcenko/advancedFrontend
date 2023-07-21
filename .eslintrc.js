@@ -45,6 +45,7 @@ module.exports = {
     'react/function-component-definition': 'off',
     'no-shadow': 'off',
     'import/extensions': 'off',
+    '@typescript-eslint/restrict-template-expressions': 'off',
     'import/no-extraneous-dependencies': 'off',
     'no-underscore-dangle': 'off',
     'padded-blocks': 'off',
